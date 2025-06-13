@@ -1,0 +1,73 @@
+% Carga de paquetes
+\usepackage[spanish,es-noshorthands,es-nosectiondot]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc} % Codificación UTF-8
+\usepackage[T1]{fontenc}    % Salida de caracteres
+\usepackage{amsmath, amssymb, amsthm, mathtools} % Matemáticas
+\usepackage{amsfonts,latexsym,cancel}
+\usepackage{graphicx}       % Imágenes
+\usepackage{tikz}  % Crear imágenes
+\usepackage[figurename=Fig.]{caption}
+
+\usepackage[breaklinks=true]{hyperref}       % Hipervínculos
+\usepackage{xcolor}         % Colores
+\usepackage{geometry}       % Márgenes
+%\usepackage[total={6.3in,9in},top=1in,left=1.4in]{geometry}  %Márgenes
+\usepackage{fancyhdr}       % Encabezados y pies de página
+
+\usepackage{enumerate}
+\usepackage{array}
+
+%\usepackage{appendix}
+
+%%%%%%%%%%%% Indices alfabetico, glosario, simbolos %%%%%%%%%%%
+\usepackage{makeidx} % Permite crear índices
+\makeindex 
+\usepackage[totoc]{idxlayout}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% GLosarios %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[nonumberlist,acronym,toc]{glossaries}
+\makeglossaries
+
+%%%%%%%%%%%%%%%%% Para agregar a la tabla de contenidos:
+%\usepackage[nottoc,notbib]{tocbibind}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%% Tabla de contenidos%%%%%%%%%%%%%%%%%%%
+\usepackage{tocloft}
+
+%Cambiar título del índice de contenidos:
+\renewcommand{\contentsname}{Índice}
+% Cambiar profundidad del índice:
+\setcounter{tocdepth}{2} % Incluye hasta 0: capítulos; 1: secciones; 2: subsecciones; 3: subsubsecciones; así sucesivamente
+
+% Cambiar el tamaño de los títulos en el índice de contenidos
+\renewcommand{\cfttoctitlefont}{\huge\bfseries}
+\renewcommand{\cftchapfont}{\bfseries}
+\renewcommand{\cftsecfont}{\itshape}
+\renewcommand{\cftchappagefont}{\bfseries}
+\renewcommand{\cftsecpagefont}{\itshape}
+
+
+%%%%%%%%%% Índice de resultados importantes %%%%%%%%%%%%%%%%%%%%
+\renewcommand{\indexname}{Índice Resultados importantes} %Renombrar el índice alfabético
+
+
+
+
+\usepackage{emptypage}
+\usepackage{float}
+\usepackage{setspace}
+\usepackage{cases}
+
+
+% Configuración de márgenes
+\geometry{margin=1in}
+\setlength{\headheight}{15.35403pt}
+% Estilo de encabezado
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\leftmark}
+\fancyhead[R]{\thepage}
+
+% Cargar estilos personalizados
+\input{styles/theoremstyle}

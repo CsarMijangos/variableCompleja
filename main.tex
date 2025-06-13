@@ -1,0 +1,38 @@
+\documentclass[a4paper,openright,12pt,spanish]{book}
+
+% Cargar preámbulo
+\input{preamble}
+\input{styles/titlepage}
+\input{tikz_helpers/tikz_complejo.tex} %para generar figuras
+\begin{document}
+
+\titlepageAMS
+% Página en blanco después de la portada
+\newpage\thispagestyle{empty}\mbox{}\newpage
+
+% Tabla de contenido
+\tableofcontents
+\newpage
+
+% Índices y prefacios
+\frontmatter
+\include{indices/index}       % Índice (puede generarse con `makeindex`)
+\include{indices/glossary}    % Glosario de términos
+
+% Contenido principal
+\mainmatter
+\include{chapters/cap1_Preliminares}
+\include{chapters/cap2_Polinomios_y_Series_Enteras}
+
+% Apéndices
+\appendix
+\include{appendices/appendix1}
+\include{appendices/appendix2}
+
+% Bibliografía
+\backmatter
+\bibliographystyle{amsplain}  % Estilo AMS para bibliografías
+\nocite{*} % Agrega el contentido completo de references.bib (si se comenta se agrega solo las referencias citadas)
+\bibliography{references}
+
+\end{document}

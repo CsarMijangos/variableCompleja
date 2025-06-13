@@ -1,0 +1,107 @@
+% Cambiar fuentes para teoremas y demostraciones
+\usepackage{lmodern}
+\usepackage{titlesec}
+
+% Estilo para teoremas
+\newtheoremstyle{mytheorem}
+  {10pt} % Espacio arriba
+  {10pt} % Espacio abajo
+  {\itshape} % Fuente del cuerpo
+  {} % Sangría
+  {\bfseries\color{blue}} % Fuente del título
+  {} % Puntuación tras el título
+  { } % Espacio tras el título
+  {%
+    \thmname{#1}~\thmnumber{#2}%
+    \if\relax\detokenize{#3}\relax % Comprueba si la nota está vacía
+    .\else~(\thmnote{#3}).\fi
+  } % Formato del título
+
+% Estilos numerados
+\theoremstyle{mytheorem}
+\newtheorem{theo}{Teorema}[chapter]
+\newtheorem{lemma}[theo]{Lema}
+\newtheorem{corol}[theo]{Corolario}
+\newtheorem{conje}[theo]{Conjetura}
+\newtheorem{ejem}{Ejemplo}[chapter]
+\newtheorem{ejer}{Ejercicio}[chapter]
+
+% Estilo para definiciones
+\newtheoremstyle{mydefinition}
+  {10pt}
+  {10pt}
+  {\normalfont} % Fuente normal (sin cursiva)
+  {}
+  {\bfseries\color{teal}}
+  {}
+  { }
+  {%
+    \thmname{#1}~\thmnumber{#2}%
+    \if\relax\detokenize{#3}\relax % Comprueba si la nota está vacía
+    \else~(\thmnote{#3}).\fi
+  } % Formato del título
+
+\theoremstyle{mydefinition}
+\newtheorem*{defi}{Definición.}
+
+% Estilo para demostraciones
+\newtheoremstyle{mydemostration}
+  {10pt}
+  {10pt}
+  {\normalfont} % Fuente normal (sin cursiva)
+  {}
+  {\bfseries}
+  {}
+  { }
+  {\thmname{#1}~\thmnumber{#2}~\thmnote{(#3)}}
+
+\theoremstyle{mydemostration}
+\newtheorem*{dem}{Demostración.}
+\renewcommand{\qedsymbol}{$\blacksquare$}
+\AtEndEnvironment{dem}{\null\hfill\qedsymbol}
+\newtheorem*{pd}{\textbf{P.D.}}
+
+% Estilos no numerados
+\theoremstyle{remark}
+\newtheorem*{obs}{\textbf{Observación}}
+\newtheorem*{notacion}{\textbf{Notación}}
+\newtheorem*{afir}{\textbf{Afirmación}}
+
+
+
+% Definir comandos personalizados
+\newcommand{\R}{\mathbb{R}} % Conjunto de los números reales
+\newcommand{\Z}{\mathbb{Z}} % Conjunto de los números enteros
+\newcommand{\N}{\mathbb{N}} % Conjunto de los números naturales
+\newcommand{\Q}{\mathbb{Q}} % Conjunto de los números racionales
+\newcommand{\C}{\mathbb{C}} % Conjunto de los números complejos
+\newcommand{\T}{\mathbb{T}} % El toro en C 
+\newcommand{\Om}{\Omega} % Omega
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert} % Valor absoluto
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert} % Norma
+\newcommand{\set}[1]{\left\{#1\right\}} % Conjunto
+\newcommand{\inner}[2]{\langle#1, #2\rangle} % Producto interno
+
+\newcommand{\derDefi}{\vcentcolon =} % Definición derecha :=
+\newcommand{\izqDefi}{= \vcentcolon } % Definición inversa =:
+\newcommand{\tq}{\, : \,} % tal que en conjuntos
+\newcommand{\Real}{\mathtt{Re}} % Parte real de un complejo
+\newcommand{\Imag}{\mathtt{Im}} % Parte imaginaria de un complejo
+\newcommand*\conj[1]{\overline{#1}}  % Conjugado de un complejo
+
+
+\newcommand*\closureSet[1]{\overline{#1}}  % Cerradura de un conjunto
+%%% Acento para interior de conjuntos:
+\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathb}{m}{n}{ <-6> matha5 <6-7> matha6 <7-8>
+mathb7 <8-9> mathb8 <9-10> mathb9 <10-12> mathb10 <12-> mathb12 }{}
+\DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+
+\DeclareMathAccent{\interiorSet}{0}{mathb}{"38}
+
+\DeclareFontFamily{U}{mathb}{\hyphenchar\font45}
+\DeclareFontShape{U}{mathb}{m}{n}{ <-6> matha5 <6-7> matha6 <7-8>
+mathb7 <8-9> mathb8 <9-10> mathb9 <10-12> mathb10 <12-> mathb12 }{}
+\DeclareSymbolFont{mathb}{U}{mathb}{m}{n}
+
+%% Fin de acento para interior

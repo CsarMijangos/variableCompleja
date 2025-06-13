@@ -1,0 +1,99 @@
+% tikz_complejo.tex
+%\usepackage{tikz}
+%\usepackage{amsmath}
+\usetikzlibrary{calc}
+\usetikzlibrary{positioning}
+
+% Estilo base para el plano complejo
+\tikzset{
+  complejo/.style={
+    thick,
+    opacity = 0.7,
+    ->,
+    >=stealth
+  },
+  punto/.style={
+    circle,
+    fill,
+    inner sep=1pt
+  },
+  discoabierto/.style={
+    draw=blue, thick, dashed, fill=blue!20, opacity=0.3
+  },
+  discocerrado/.style={
+    draw=blue, thick, solid, fill=blue!20, opacity=0.4
+  },
+  regionConexa/.style={
+    green!50, opacity=0.5, thick
+  }
+}
+
+% Comando para dibujar el plano complejo
+\newcommand{\planoComplejo}[1][]{
+  \draw[complejo] (-3,0) -- (3,0) node[right] {\(x\)};
+  \draw[complejo] (0,-3) -- (0,3) node[above] {\(y\)};
+  % Opcional: título
+  \ifx&#1&\else
+    \node at (2.5,2.7) {#1};
+  \fi
+}
+
+% Comando para dibujar el semi plano superior complejo
+\newcommand{\semiPlanoComplejo}[1][]{
+  \draw[complejo] (-3,0) -- (3,0) node[right] {\(x\)};
+  \draw[complejo] (0,-0.5) -- (0,3) node[above] {\(y\)};
+  % Opcional: título
+  \ifx&#1&\else
+    \node at (2.5,2.7) {#1};
+  \fi
+}
+
+% Comando para dibujar el semi plano superior complejo con origen en punto dado
+\newcommand{\semiPlanoComplejoCentrado}[2]{
+  \draw[complejo] (#1 - 2.5,#2) -- (#1 + 2.5,#2) node[right] {\(x\)};
+  \draw[complejo] (#1,#2 - 0.5) -- (#1,#2 + 2.5) node[above] {\(y\)};
+ 
+}
+
+% Disco abierto centrado en (x,y) con radio r
+\newcommand{\discoAbierto}[4]{
+  \filldraw[discoabierto] (#1,#2) circle (#3);
+  \node at (#1+#4,#2+#4) {\(D(a,r)\)};
+}
+
+% Disco cerrado centrado en (x,y) con radio r
+\newcommand{\discoCerrado}[4]{
+  \filldraw[discocerrado] (#1,#2) circle (#3);
+  \node at (#1+#4,#2+#4) {\(\overline{D}(a,r)\)};
+}
+
+% Punto etiquetado
+\newcommand{\punto}[4]{
+  \filldraw[punto] (#1,#2) circle (1pt) node[#3] {#4};
+}
+
+% Dibuja un segmento entre dos puntos, con etiqueta opcional
+\newcommand{\segmentoRojo}[5]{
+  \draw[thick, red] (#1,#2) -- (#3,#4);
+  \ifx&#5&\else
+    \node at ({(#1+#3)/2},{(#2+#4)/2 + 0.2}) {\(#5\)};
+  \fi
+}
+\newcommand{\segmentoAzul}[5]{
+  \draw[thick, blue] (#1,#2) -- (#3,#4);
+  \ifx&#5&\else
+    \node at ({(#1+#3)/2},{(#2+#4)/2 + 0.2}) {\(#5\)};
+  \fi
+}
+\newcommand{\segmentoNegro}[5]{
+  \draw[thick] (#1,#2) -- (#3,#4);
+  \ifx&#5&\else
+    \node at ({(#1+#3)/2},{(#2+#4)/2 + 0.2}) {\(#5\)};
+  \fi
+}
+
+% Dibuja una región conexa con forma arbitraria a partir de coordenadas
+% Uso: \regionConexa{{(x1,y1)(x2,y2)...}}{Etiqueta}
+\newcommand{\regionConexa}[1]{
+  \filldraw[regionConexa] plot [smooth cycle] coordinates #1;  
+}
