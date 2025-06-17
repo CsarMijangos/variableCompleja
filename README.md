@@ -6,7 +6,7 @@
 
 ## Estructura del proyecto
 - `main.tex` - Documento principal, contiene las llamadas a las demás partes del documento.
-- `preamble.tex` - Paquetes utilizados, índice enespañol, y geometría (márgenes) de páginas.
+- `preamble.tex` - Paquetes utilizados, índice en español, y geometría (márgenes) de páginas.
 - `appendices` - Apéndices 
 - `chapters/` - Capítulos del artículo
 - `chapters/chapter_n/` - Carpeta que contiene las secciones del Capítulo n.

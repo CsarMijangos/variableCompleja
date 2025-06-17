@@ -46,7 +46,7 @@
     La aplicación al caso de series de potencias se sigue de reemplazar $a_n$ y $b_n$ por $a_nx^n$ y $b_nx^n$,
     respectivamente.
   \end{dem}
-  Con la ayuda del lema anterior y del teorema del binomio podemos demostrar facilmente la siguiente ecuación
+  Con la ayuda del lema anterior y del teorema del binomio podemos demostrar fácilmente la siguiente ecuación
   funcional de la función exponencial.
   \begin{theo}[Ecuación Funcional] Se verifica la siguiente identidad
     \begin{equation}
@@ -141,7 +141,7 @@ Entonces, \(E(f(x)) = \varphi(x)\) para todo \(x\in [0,1]\) y, en particular, \(
 \begin{dem}
   Multiplicando por \(E(-f(x))\) en ambos lados de la igualdad, notamos que \(E(f(x)) = \varphi(x)\) es equivalente a que $1 = \varphi(x)E(-f(x))\izqDefi g(x)$. 
   Basta pues, con demostrar que \(g(x) = 1\) para todo \(x\in [0,1]\).
-  Comencemos por obervar que \(f(x)\) es de clase $C^1$ (Ejercicio: ¿Por qué?), entonces \(\varphi(x)E(-f(x))\) es diferenciable y
+  Comencemos por observar que \(f(x)\) es de clase $C^1$ (Ejercicio: ¿Por qué?), entonces \(\varphi(x)E(-f(x))\) es diferenciable y
   aplicando el punto 4 del Teorema \ref{teo-propiedades-exp} tenemos que para todo \(x \in [0,1]\):
   \[
   g'(x) = E(-f(x))\left(\varphi'(x) - \varphi(x)\times \frac{\varphi'(x)}{\varphi(x)} \right) = 0.
@@ -176,7 +176,7 @@ Entonces, \(E(f(x)) = \varphi(x)\) para todo \(x\in [0,1]\) y, en particular, \(
     \(0\), y podemos parametrizar este segmento mediante \(\varphi(t) = 1 + t(w-1),\, 0\leq t\leq 1\). Por el Lema anterior
     tenemos que \[w = \varphi(1) = E\left(\int_{0}^{1}\frac{w-1}{1 + t(w-1)}dt\right).\]
     Para el caso en que \(w\) sea un real negativo podemos pensar que basta con tomar \(\varphi(t)\) como una parametrización de un arco
-    de circunferecnia que una a \(1\) con \(w\), evitando así pasar por el 0. Efectivamente con esto y el Lema anterior se seguiría la prueba. Desafortunadamente 
+    de circunferencia que una a \(1\) con \(w\), evitando así pasar por el 0. Efectivamente con esto y el Lema anterior se seguiría la prueba. Desafortunadamente 
     todavía no hemos definido lo que son el seno y coseno complejos. Procederemos por otro camino, pero de igual manera terminaremos 
     con un complejo tal que su imagen bajo \(E\) es \(w\).
     Digamos que \(w=-r\) con \(r>0\), comenzamos por observar que \(i \not \in (-\infty, 0)\), 
@@ -249,7 +249,7 @@ ser homeomorfos. Dicho esto, el siguiente resultado jugará un papel importante 
     \[
     \abs{2k\pi} = \abs{t - \phi} \leq \abs{t-\pi} + \abs{\pi - \phi}< 2\pi.
     \]
-    Esto implica que \(\phi = t\). Por lo tanto, la sucesión \((t_n)\) posee un único punto de adherencia, luego \((t_n)\) converge, y lo hace a tal punto aherente, es decir,
+    Esto implica que \(\phi = t\). Por lo tanto, la sucesión \((t_n)\) posee un único punto de adherencia, luego \((t_n)\) converge, y lo hace a tal punto adherente, es decir,
     a \(t\).
 \end{dem}
 
@@ -271,7 +271,7 @@ se pueden extender al plano complejo:
 \]
 
 \subsection{Módulo y Argumento de un Número Complejo}
-Las propiedades de la exponecial compleja nos permite probar el siguiente teorema.
+Las propiedades de la exponencial compleja nos permite probar el siguiente teorema.
 \begin{theo}[Módulo y Argumento]
     \begin{enumerate}
         \item Cualquier número complejo \(w\neq 0\) se puede escribir como 
@@ -292,7 +292,7 @@ Las propiedades de la exponecial compleja nos permite probar el siguiente teorem
     que \(w = re^{i\theta}\). Que \(\theta\) está determinado \(\pmod{2\pi}\) se sigue del hecho que el kernel del homomorfismo
     de \(\R\) en \(\T\) dado por \(h: t \mapsto e^{it}\) es \(2\pi\Z\).
 
-    {\bf (2).} Es claro que los \(z_k\) son raíces \(n\)-ésimas de \(w\). También es claro que los \(n\) valores son diferentes, pues si tuvieramos
+    {\bf (2).} Es claro que los \(z_k\) son raíces \(n\)-ésimas de \(w\). También es claro que los \(n\) valores son diferentes, pues si tuviéramos
     \(z_j = z_k\) con \(0\leq j < k \leq n-1\), entonces de \(e^{2i\frac{k\pi}{n}} = e^{2i\frac{j\pi}{n}}\) se seguiría que \((2\frac{k\pi}{n} - 2\frac{j\pi}{n}) \in 2\pi\Z \).
     Lo que a su vez implicaría que \(\frac{k-j}{n} = m\), para algún \(m \in \Z\). Esto es, \(n | k-j\) con \(1\leq k-j \leq n-1\). Lo cual es una
     contradicción (¿Por qué?). Finalmente, para ver que no hay más raíces \(n\)-ésimas fuera de las listadas supongamos que \(z= \rho e^{i\varphi}\)
@@ -310,8 +310,8 @@ Las propiedades de la exponecial compleja nos permite probar el siguiente teorem
 Una vez establecida la sobreyectividad de \(E:\C \rightarrow \C^* \), una generalización del Lema \ref{lema:integral-derivada-logaritmica}, página 
 \pageref{lema:integral-derivada-logaritmica}, que nos será muy útil es la siguiente.
 
-\begin{theo}
-    Consideremos una función \(\varphi : [a, b]\rightarrow \C^* \), continua y de clase \(C^1\) a trozos, un comlejo \(\mu \in \C \), y la función
+\begin{theo}[Levantamiento]\label{teo-levantamiento-exp}
+    Consideremos una función \(\varphi : [a, b]\rightarrow \C^* \), continua y de clase \(C^1\) a trozos, un complejo \(\mu \in \C \), y la función
     \(f: [a, b] \rightarrow \C \) definida por 
     \[
     \displaystyle f(x) = \int_{a}^{x} \frac{\varphi'(t)}{\varphi(t)} dt + \mu.
@@ -322,5 +322,15 @@ Una vez establecida la sobreyectividad de \(E:\C \rightarrow \C^* \), una genera
     Que \(\varphi\) sea de clase \(C^1\) a trozos significa que existe una partición \(a=t_0 < t_1 < \cdots < t_n = b\) tal que
     \(\varphi\) es de clase \(C^1\) en cada subintervalo \([t_j, t_{j+1}]\), pero con posiblemente \(\varphi'(t_j - 0) \neq \varphi'(t_j + 0)\).
 
-    Elijiendo 
+    Eligiendo \(\mu\) de tal manera que \(E(\mu) = \varphi(a)\), lo cual es posible gracias al Teorema \ref{teo-propiedades2-exp}, página \pageref{teo-propiedades2-exp}. 
+    Vamos a proceder para cada \(j \in \{0,1,2, \dots , n-1 \}\). Para cada \(x\) en el segmento \([t_j, t_{j+1}]\) tenemos que \(f'(x)= \frac{\varphi'(x)}{\varphi(x)}\).
+    Por el Teorema \ref{teo-propiedades-exp}, página \pageref{teo-propiedades-exp}, la función \(g(x) = \varphi(x)E(-f(x))\) satisface que 
+    \(g'(x)= \varphi'(x)E(-f(x)) + \varphi(x)(-f'(x)E(-f(x))) = f'(x)\varphi(x)E(-f(x)) - \varphi(x)f'(x)E(-f(x)) = 0 \) para \(x \in [t_j, t_{j+1}]\). De aquí se sigue 
+    que la función \(g(x)\) es constante en cada intervalo \([t_j, t_{j+1}]\), y de aquí es constante en todo el intervalo \([a, b]\). Pero 
+    \(g(a) = \varphi(a)E(-f(a)) = \varphi(a)E(-\mu) = 1\), de donde podemos deducir que \(g(x) = \varphi(x)E(-f(x)) = 1\). Por último, para concluir basta con multiplicar 
+    por \(E(f(x))\)
 \end{dem}
+
+\begin{obs}
+    El Teorema \ref{teo-levantamiento-exp} afirma que la función \(\varphi\) admite un {\it logaritmo continuo}. 
+\end{obs}
