@@ -1,0 +1,15 @@
+\section{Recordatorio de Análisis de Fourier}
+El análisis de Fourier y el análisis complejo explotan las propiedades de la función 
+exponencial que hemos estudiado. Estos están intimamente ligados gracias a lo siguiente:
+Consideremos una serie de potencias de radio de convergencia 1, \(f(z) = \sum_{n=0}^{\infty} a_nz^n\).
+Si \(\abs{z} = 1\), podemos escribir \(z = e^{it}\) con \(t\in \R\), y formalmente nuestra serie de 
+potencias deviene en la siguiente serie trigonométrica \(\sum_{n=0}^{\infty}a_ne^{int}\). Este tipo 
+series son delicadas de estudiar, nosotros nos contentaremos con presentar algunos resultados simples
+pero robustos. Denotaremos por \(\mathcal{C}\) al espacio vectorial de funciones continuas y 
+\(2\pi\)-periódicas \(f: \R \to \C \). Dotaremos a \(\mathcal{C}\) con la norma infinito definida por
+\(\norm{f}_{\infty} \derDefi \sup_{0\leq t \leq 2\pi} \abs{f(t)} \). Para \(f \in \mathcal{C}\) y 
+\(n\in \Z\), el \(n\)-ésimo coeficiente de Fourier, denotado por \(c_n(f)\) o \(\hat{f}(n)\) se define
+por 
+\[
+c_n \derDefi \frac{1}{2\pi} \int_{0}^{2\pi} f(t) e^{-int} dt.
+\]
