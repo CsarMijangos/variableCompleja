@@ -21,7 +21,7 @@ S_N(t) = \sum_{n=-N}^{N} a_ne^{int}
 converge uniformemente en \(\R\) cuando \(N \to \infty\). Estamos en condiciones de establecer el siguiente
 teorema.
 
-\begin{theo}
+\begin{theo}\label{teo-series-Fourier}
     Sea \(\sum_{n=-\infty}^{\infty}a_ne^{int}\) una serie trigonométrica uniformemente convergente en \(\R\),
     de suma \(F\). Entonces, \(F \in \mathcal{C}\) y, además,
     \[
@@ -45,4 +45,42 @@ teorema.
     \]
     Haciendo tender \(N\to \infty\) y utilizando la convergencia uniforme se concluye la veracidad del teorema.
 \end{dem}
+Enunciaremos ahora una versión simple de la identidad de Parseval, que nos será suficiente en esta obra.
 
+\begin{theo}[Parseval]\label{teo-identidad-Parseval}
+    Sea \(\sum_{n=-\infty}^{\infty}a_ne^{int}\) una serie trigonométrica uniformemente convergente en \(\R\), con suma
+    \(S(t)\). Entonces,
+    \[
+    \sum_{n=-\infty}^{\infty} \abs{a_n}^2 < \infty
+    \]
+    y, además,
+    \[
+    \sum_{n=-\infty}^{\infty} \abs{a_n}^2 = \frac{1}{2\pi} \int_{0}^{2\pi} \abs{S(t)}^2 dt.
+    \]
+    Si \(f(z) = \sum_{n=0}^{\infty}a_nz^{n}\) es una serie de potencias de radio de convergencia \(R\), tenemos que 
+    para todo \(0\leq r < R\):
+    \[
+    \sum_{n=0}^{\infty}\abs{a_n}^2 r^{2n} = \frac{1}{2\pi} \int_{0}^{2\pi} \abs{f(re^{it})}^2 dt.
+    \]
+\end{theo}
+\begin{dem}
+    Utilizaremos la ortonormalidad de las exponenciales \(e^{ijt}\) cuando \(j\) recorre \(\Z\). Sea \(S_N(t) = \sum_{n=-N}^{N}a_n e^{int}\).
+    Ya que tenemos que \(\abs{S_N(t)} \leq \sum_{n=-N}^{N}\abs{a_n}\), y que existe \(N_0\) tal que \(\abs{S_N(t)}\leq \abs{S(t)} + 1\) para 
+    \(N\geq N_0\), y que la función continua y \(2\pi\)-periódica \(S\) es acotada en \(\R\), se sigue que \(\abs{S_N(t)} \leq M\), para algún 
+    \(M\) que es independiente de \(N\) y \(t\). Además, por ortogonalidad antes mencionada tenemos:
+    \[
+    M^2 \geq \frac{1}{2\pi}\int_{0}^{2\pi} \abs{S_N(t)}^2 dt = \frac{1}{2\pi} \int_{0}^{2\pi}\sum_{n=-N}^{N} a_j \conj{a_k} e^{ijt}e^{-ikt} dt 
+    = \sum_{n=-N}^{N} \abs{a_n}^2.
+    \]
+    De aquí se sigue que la serie \(\sum_{n=-N}^{N}\abs{a_n}^2\) converge, y además \(\sum_{n=-\infty}^{\infty}\abs{a_n}^2 \leq M^2 \). Ahora 
+    podemos justificar el paso al límite cuando \(N \to \infty\) en la igualdad 
+    \(\sum_{n=-N}^{N} \abs{a_n}^2 = \frac{1}{2\pi}\int_{0}^{2\pi} \abs{S_N(t)}^2 dt\), pues \(S_N\) converge uniformemente y la desigualdad 
+    \(\abs{S_N(t)}\leq M\), por lo tanto la identidad de Parseval queda establecida. Ahora, para la especialización a las series de potencias
+    consideremos un \(r<R\) y \(z = re^{it}\) arbitrarios. Basta con demostrar que la serie \(\sum_{n=0}^{\infty}a_nr^ne^{int}\) converge 
+    uniformemente en \(\R\). Esto se sigue por la prueba \(M\) de Weierstrass, y de que las series de potencias convergen absolutamente dentro 
+    de su disco de convergencia, ya que
+    \[
+    \abs{a_nr^n e^{int}} \leq \abs{a_n}r^n, \quad \text{y}\quad \sum_{n=0}^{\infty} \abs{a_n}r^n < \infty.
+    \]
+
+\end{dem}
