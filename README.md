@@ -1,8 +1,10 @@
 # Variable Compleja
 
 ## Colaboradores
-- Nombre 1
-- Nombre 2  
+- Nombre 1 (Juan)
+- Nombre 2 (María)
+- Nombre 3 (Carlos)
+- Nombre 4 (Ana) 
 
 ## Estructura del proyecto
 - `main.tex` - Documento principal, contiene las llamadas a las demás partes del documento.
