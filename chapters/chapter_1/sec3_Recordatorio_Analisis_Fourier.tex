@@ -13,3 +13,36 @@ por
 \[
 c_n \derDefi \frac{1}{2\pi} \int_{0}^{2\pi} f(t) e^{-int} dt.
 \]
+Diremos que una serie trigonométrica \(\sum_{n\in \Z} a_ne^{int}\) converge uniformemente en \(\R\) si
+la siguiente sucesión de sumas parciales simétricas
+\[
+S_N(t) = \sum_{n=-N}^{N} a_ne^{int}
+\]
+converge uniformemente en \(\R\) cuando \(N \to \infty\). Estamos en condiciones de establecer el siguiente
+teorema.
+
+\begin{theo}
+    Sea \(\sum_{n=-\infty}^{\infty}a_ne^{int}\) una serie trigonométrica uniformemente convergente en \(\R\),
+    de suma \(F\). Entonces, \(F \in \mathcal{C}\) y, además,
+    \[
+    c_n(F) = a_n, \quad \forall n\in \Z.
+    \]
+\end{theo}
+\begin{dem}
+    El argumento de la demostración descansa en la ortonormalidad de las exponenciales \(e^{ijt}\) cuando 
+    \(j\) recorre \(\Z\):
+    \[
+    \frac{1}{2\pi} \int_{0}^{2\pi} e^{ijt}e^{-ikt} dt = 
+        \begin{cases}
+        0, \quad \text{si} \quad j\neq k, \\
+        1, \quad \text{si} \quad j=k.        
+        \end{cases}
+    \]
+    Fijemos un \(n\in \Z\) arbitrario. Para \(N \geq \abs{n}\), utilizando la ortogonalidad de \(e^{ijt}\) tenemos que:
+    \[
+    c_n(S_N) = \frac{1}{2\pi} \int_{0}^{2\pi} \sum_{j=-N}^{N} a_je^{ijt} e^{-int} dt = 
+               \sum_{j=-N}^{N} a_j \frac{1}{2\pi} \int_{0}^{2\pi} e^{ijt} e^{-int} dt = a_n.
+    \]
+    Haciendo tender \(N\to \infty\) y utilizando la convergencia uniforme se concluye la veracidad del teorema.
+\end{dem}
+
