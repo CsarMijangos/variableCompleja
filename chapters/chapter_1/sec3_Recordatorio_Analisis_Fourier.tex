@@ -84,3 +84,26 @@ Enunciaremos ahora una versión simple de la identidad de Parseval, que nos ser�
     \]
 
 \end{dem}
+
+Un resultado elemental está vinculado al kernel de Poisson \(P_r \in \mathcal{C}\), el cual resultará ser de importancia fundamental tanto para 
+el análisis de Fourier como para el análisis complejo. Este kernel está definido como sigue, para \(0 < r < 1\):
+\begin{equation}\label{formula-kernel-Poisson}
+\displaystyle P_r(t)= \sum_{n\in \Z} r^{\abs{n}}e^{int} = \frac{1-r^2}{1-2r\cos t + r^2}.
+\end{equation}
+Definiendo, para \(f\in \mathcal{C}\):
+\[
+\norm{f}_1 \derDefi \frac{1}{2\pi}\int_{0}^{2\pi} \abs{f(t)} dt.s
+\]
+Una propiedad fundamental es que \(\norm{P_r}_1 = 1\). En efecto, la segunda igualdad en \ref{formula-kernel-Poisson} implica que \(P_r\geq 0\) 
+(Ejercicio: Probarlo), entonces \(\norm{P_r}_1 \derDefi \frac{1}{2\pi}\int_{0}^{2\pi} P_r(t) dt \). Y la primera igualdad en \ref{formula-kernel-Poisson}
+demuestra que 
+\[
+\frac{1}{2\pi}\int_{0}^{2\pi} P_r(t) dt = c_0(P_r)= r^{\abs{0}} = 1.
+\]
+
+\begin{defi}[Convolución]
+Definimos la convolución de dos funciones \(f, g\in \mathcal{C}\) como:
+\[
+(f * g) (x) = \frac{1}{2\pi}\int_{0}^{2\pi} f(x-t)g(t) dt.
+\]
+\end{defi}
