@@ -107,3 +107,71 @@ Definimos la convolución de dos funciones \(f, g\in \mathcal{C}\) como:
 (f * g) (x) = \frac{1}{2\pi}\int_{0}^{2\pi} f(x-t)g(t) dt.
 \]
 \end{defi}
+Podemos verfacilmente que \(f * g = g * f \in \mathcal{C} \), y que \(c_n(f * g) = c_n(f)c_n(g)\) vía el Teorema de Fubini y la relación 
+\(e^{-inx} = e^{-in(x-t)}e^{-int}\). Además tenemos los resultados siguientes.
+
+\begin{prop}
+    Consideremos \(f,g \in \mathcal{C}\) y sea \(0 < r < 1\). Entonces
+    \begin{enumerate}
+        \item \(\norm{f * g}_1 \leq \norm{f}_1\norm{g}_1\);
+        \item \(\norm{f * P_r} \leq \norm{f}_1\);
+        \item \(c_n(f * P_r) = r^{\abs{n}}c_n(f)\).
+    \end{enumerate}
+\end{prop}
+\begin{dem}
+La primera afirmación es consecuencia del Teorema de Fubini, pues
+\begin{equation*}
+\begin{split}
+\norm{f * g}_1 & = \frac{1}{2\pi} \int_{0}^{2\pi} \abs{f*g}(x) dx \\
+    & \leq \frac{1}{2\pi} \int_{0}^{2\pi} \left( \frac{1}{2\pi} \int_{0}^{2\pi} \abs{f(x-t)}\abs{g(t)} dt \right) dx \\
+    & \leq \frac{1}{2\pi} \int_{0}^{2\pi} \abs{g(t)}\left(\frac{1}{2\pi} \int_{0}^{2\pi} \abs{f(x-t)} dx \right) dt \\
+    & \leq \frac{1}{2\pi} \int_{0}^{2\pi} \abs{g(t)} \norm{f}_1 dt \\
+    & \leq \norm{g}_1\norm{f}_1.
+\end{split}
+\end{equation*}
+En efecto, por la \(2\pi\)-periodicidad de \(f\), se tiene que para todo \(t\in \R \)
+\[
+    \frac{1}{2\pi} \int_{0}^{2\pi} \abs{f(x-t)} dx = \frac{1}{2\pi} \int_{-t}^{2\pi -t} \abs{f(y)} dy = \norm{f}_1.
+\]
+
+La segunda afirmación es consecuencia de la primera y de que \(\norm{P_r}_1 = 1\). Finalmente,
+\[
+c_n(f * P_r) = c_n(P_r) c_n(f) = r^{\abs{n}} c_n(f).
+\] 
+\end{dem}
+
+Admitiremos sin demostración la siguiente proposición, que no es difícil, pero sí muy clásica, y de la que no es 
+útil reproducir aquí la prueba.
+\begin{prop}
+    El kernel de Poisson es una identidad aproximada para la convolución. Esto significa que,
+    para \(f\in \mathcal{C}\),
+    \[
+    \lim_{r\to 1^{-}} \norm{f*P_r - f}_{\infty} = 0.
+    \]
+\end{prop}
+Un resultado un poco más "académico" que puede utilizarce para el desarrollo de Laurent de una función holomorfa dentro 
+de una corona abierta. 
+
+\begin{theo}
+    Sea \(f:\R \to \C \) una función \(2\pi\)-periódica de clase \(C^2\), y para \(n \in \Z \), sea 
+    \(c_n\derDefi c_n(f) = \frac{1}{2\pi} \int_{0}^{2\pi} f(t) e^{-int } dt\). Entonces,
+    \begin{enumerate}
+        \item \(\sum_{n\in\Z}\abs{c_n} < \infty\)
+        \item \(f(t) = \sum_{n\in\Z} c_n e^{int},quad \forall t\in \R\).
+    \end{enumerate}
+\end{theo}
+\begin{dem}
+    Una doble integración por partes muestra que, para \(n \neq 0\), 
+    \[
+    c_n(f) = - \frac{1}{n^2}c_n(f''), \quad \text{luego} \quad \abs{c_n(f)} \leq \frac{\norm{f''}_{\infty}}{n^2},
+    \]
+    esto demuestra la primera afirmación. Entonces, la función \(F(t)\derDefi \sum_{n\in \Z}c_n e^{int}\) está bien definida,
+    es continua, con \(c_n(F(F)) = c_n(f)\) y luego \(c_n(F-f)= 0\). He aquí el hecho que nos permite concluir. Sea 
+    \(g: \R \to \C \) una función de \(\mathcal{C}\). Entonces,
+    \begin{equation}\label{coeficientes-fourier-cero}
+        \left( c_n(g) = 0, \quad \forall n\in \Z \right) \implies g = 0.
+    \end{equation}
+    Este resultado de unicidad de los coeficientes de Fourier se puede ver como {\it la versión trigonométrica del Teorema de
+    los momentos de Mertens} (que nos dice que, si \(f:[0,1]\to \C\) es continua con \(\int_{0}^{1}t^n f(t) dt = 0, \; \forall n\in \N\),
+    entonces \(f=0\)) y la prueba es la misma: 
+\end{dem}
