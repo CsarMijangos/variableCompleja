@@ -27,6 +27,7 @@
 *.lof
 *.lot
 *.xdy
+build/
 
 # OS generated files
 .DS_Store
